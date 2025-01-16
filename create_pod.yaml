@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicationController
+metadata:
+  name: replication-name
+spec:
+  replicas: 2
+  selector:
+    app: ubuntu-deploy
+  template:
+    metadata:
+      labels:
+        app: ubuntu-deploy
+    spec:
+      restartPolicy: Always # Always, OnFailure, Never
+      containers:
+      - name: container-01
+        image: ubuntu
+        imagePullPolicy: IfNotPresent # Always, IfNotPresent, Never
+        ports:
+        - containerPort: 80
