@@ -9,8 +9,8 @@ spec:
   type: ClusterIP
   spec:
     containers:
-      -name: cont-01
-      image: ubuntu # ClusterIP, NodePort, LoadBalancer, ExternalName
+      -name: cont-02
+      image: ubuntu
   ports:
   - port: 80
     targetPort: 80
